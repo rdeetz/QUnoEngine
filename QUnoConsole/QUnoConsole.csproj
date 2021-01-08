@@ -11,4 +11,8 @@
     <Copyright>Copyright (c) 2008-2021 Roger Deetz. All rights reserved.</Copyright>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\QUnoLibrary\QUnoLibrary.csproj" />
+  </ItemGroup>
+
 </Project>

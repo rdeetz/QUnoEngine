@@ -14,4 +14,8 @@
     <Compile Include="Program.fs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\QUnoLibrary\QUnoLibrary.csproj" />
+  </ItemGroup>
+
 </Project>
