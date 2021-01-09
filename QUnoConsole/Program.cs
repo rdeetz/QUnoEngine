@@ -109,7 +109,7 @@ namespace Mooville.QUno.Console
                 copyright = copyright.Replace(@"©", @"(c)");
             }
 
-            Console.WriteLine(String.Format("Mooville QUno, version {0}", version));
+            Console.WriteLine(String.Format("QUno, version {0}", version));
             Console.WriteLine(copyright);
             Console.WriteLine();
 
