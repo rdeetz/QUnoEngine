@@ -106,7 +106,7 @@ namespace Mooville.QUno.Model
         /// <value>
         /// The draw pile.
         /// </value>
-        internal Stack<Card> DrawPile
+        public Stack<Card> DrawPile
         {
             get
             {
@@ -120,7 +120,7 @@ namespace Mooville.QUno.Model
         /// <value>
         /// The discard pile.
         /// </value>
-        internal Stack<Card> DiscardPile
+        public Stack<Card> DiscardPile
         {
             get
             {
@@ -220,7 +220,7 @@ namespace Mooville.QUno.Model
         /// <returns>
         /// An array of the cards that were on the pile.
         /// </returns>
-        internal static Card[] GetCardsOffPile(ref Stack<Card> pile)
+        public static Card[] GetCardsOffPile(ref Stack<Card> pile)
         {
             int count = pile.Count;
             Card[] cards = new Card[count];
@@ -242,7 +242,7 @@ namespace Mooville.QUno.Model
         /// <param name="pile">
         /// The pile where the cards will go.
         /// </param>
-        internal static void PutCardsOnPile(Card[] cards, ref Stack<Card> pile)
+        public static void PutCardsOnPile(Card[] cards, ref Stack<Card> pile)
         {
             for (int i = 0; i < cards.Length; i++)
             {
@@ -258,7 +258,7 @@ namespace Mooville.QUno.Model
         /// <param name="cardsToShuffle">
         /// The cards to shuffle.
         /// </param>
-        internal static void ShuffleCards(ref Card[] cardsToShuffle)
+        public static void ShuffleCards(ref Card[] cardsToShuffle)
         {
             Random rnd = new Random();
 
