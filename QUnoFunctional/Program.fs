@@ -8,7 +8,7 @@ open Mooville.QUno.Model
 
 let getVersionAndCopyright = 
     let versionNumber = Assembly.GetExecutingAssembly().GetName().Version.ToString()
-    let version = String.Format("Mooville QUno for F# on .NET 5, version {0}", versionNumber)
+    let version = String.Format("QUno, version {0}", versionNumber)
     let attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof<AssemblyCopyrightAttribute>, false)
     let copyright = 
         match attributes.Length with
@@ -17,13 +17,12 @@ let getVersionAndCopyright =
     (version, copyright)
 
 let printUsage = 
-    printfn "Usage: dotnet run -- [options]"
+    printfn "Usage: QUnoFunctional.exe [players] [games]"
     printfn ""
     printfn "Options:"
-    printfn "  --players=<number>       The number of players in each game."
-    printfn "  --games=<number>         The number of games to play."
-    printfn "  --help                   Display this help message."
-    printfn "  --version                Display the version."
+    printfn "  <players>                The number of players in each game."
+    printfn "  <games>                  The number of games to play."
+    printfn "If you do not provide options, the default number of players is 4 and the default number of games is 1."
     printfn ""
     ()
 
