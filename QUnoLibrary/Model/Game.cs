@@ -100,7 +100,7 @@ namespace Mooville.QUno.Model
                 return this.currentDirection;
             }
 
-            internal set
+            set
             {
                 this.currentDirection = value;
             }
@@ -165,7 +165,7 @@ namespace Mooville.QUno.Model
         /// <value>
         /// The index of the current player.
         /// </value>
-        internal int CurrentPlayerIndex
+        public int CurrentPlayerIndex
         {
             get
             {
