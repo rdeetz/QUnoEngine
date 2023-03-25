@@ -27,7 +27,7 @@ will add 4 computer players to each game and play 12 games in total.
 
 This repository includes a straightforward .NET class library, unit test project, and 
 console applications implemented in C# and F#. The original code has been in 
-development since .NET Framework v2, but these projects have been updated for .NET 5 
+development since .NET Framework v2, but these projects have been updated for modern .NET 
 and implemented as SDK-style projects. Thus you can use the standard `dotnet build`, 
 `dotnet run`, `dotnet test` workflow on the individual projects, or you can use 
 Visual Studio to open the full solution.
@@ -40,4 +40,4 @@ support implementing a user interface that follows the Model-View-ViewModel patt
 * `QUnoFunctional` contains a F# console application driving the game engine programmatically.
 
 The game engine and applications in this repository are intended to be completely cross-platform 
-and require only the .NET 5 runtime.
+and require only the .NET runtime.
