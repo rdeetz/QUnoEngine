@@ -4,7 +4,7 @@ An Uno-like card game.
 
 ## Requirements
 
-* [.NET 8 SDK](https://dotnet.microsoft.com/download)
+* [.NET 9 SDK](https://dotnet.microsoft.com/download)
 * Your favorite editor (my favorite editor is [Visual Studio Code](https://code.visualstudio.com/))
 
 ## How To Play
