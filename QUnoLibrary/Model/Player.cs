@@ -104,6 +104,15 @@ namespace Mooville.QUno.Model
             return cardToPlay;
         }
 
+        /// <summary>
+        /// Choose the cards that can be played from this player's hand.
+        /// </summary>
+        /// <param name="game">
+        /// The current <see cref="Game"/> that the player is in.
+        /// </param>
+        /// <returns>
+        /// The list of <see cref="Card"/>s that can be played.
+        /// </returns>
         public virtual IList<Card> ChoosePlayableCards(Game game)
         {
             return this.Hand.Cards.TakeWhile(game.CanPlay).ToList<Card>();
