@@ -63,26 +63,34 @@ let main argv =
 
         game.Deal()
 
+        let mutable turnNumber = 0
+
         while not game.IsGameOver do
+            turnNumber <- turnNumber + 1
             let currentPlayer = game.CurrentPlayer
+            let currentCardName = game.Deck.CurrentCard.ToString()
             let cardToPlay = currentPlayer.ChooseCardToPlay(game)
 
             if cardToPlay = null then
                 let cardToDraw = game.DrawCard()
                 currentPlayer.Hand.Cards.Add(cardToDraw)
-                printfn "%s drew a card." currentPlayer.Name
+                printfn "[Turn %d current card is %s] %s drew a card." turnNumber currentCardName currentPlayer.Name
             else
                 let cardName = cardToPlay.ToString()
+                let playableCards =
+                    currentPlayer.ChoosePlayableCards(game) |> Seq.toList
+                    |> List.map (fun c -> c.ToString())
+                    |> String.concat "|"
 
                 if cardToPlay.Color = Color.Wild then
                     let wildColor = currentPlayer.ChooseWildColor()
                     let wildColorName = wildColor.ToString()
                     let wildColorNullable = new Nullable<Color>(wildColor)
                     game.PlayCard(cardToPlay, wildColorNullable)
-                    printfn "%s played %s and chose %s." currentPlayer.Name cardName wildColorName
+                    printfn "[Turn %d current card is %s] %s played %s and chose %s. (Could have played %s)" turnNumber currentCardName currentPlayer.Name cardName wildColorName playableCards
                 else
                     game.PlayCard(cardToPlay)
-                    printfn "%s played %s." currentPlayer.Name cardName
+                    printfn "[Turn %d current card is %s] %s played %s. (Could have played %s)" turnNumber currentCardName currentPlayer.Name cardName playableCards
 
         let winningPlayer = game.Players.First(fun p -> p.Hand.Cards.Count = 0)
         winners <- winningPlayer.Name :: winners

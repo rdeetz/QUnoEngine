@@ -4,6 +4,10 @@
 
 namespace Mooville.QUno.Model
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     /// <summary>
     /// Represents a player.
     /// </summary>
@@ -98,6 +102,11 @@ namespace Mooville.QUno.Model
             }
 
             return cardToPlay;
+        }
+
+        public virtual IList<Card> ChoosePlayableCards(Game game)
+        {
+            return this.Hand.Cards.TakeWhile(game.CanPlay).ToList<Card>();
         }
 
         /// <summary>
